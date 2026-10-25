@@ -1,0 +1,839 @@
+:root {
+  --ink: #243d31;
+  --paper: #f7f5ee;
+  --accent: #8b9e50;
+}
+body {
+  color: var(--ink);
+  background: var(--paper);
+}
+.aven-nav {
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  gap: 25px;
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 100;
+}
+.aven-logo {
+  font-family: "Playfair Display Variable", serif;
+  font-size: 45px;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.aven-logo span {
+  font-family: "DM Sans Variable", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.4em;
+  margin-top: 11px;
+  padding-left: 5px;
+}
+.aven-nav nav {
+  display: flex;
+  gap: 38px;
+  font-size: 16px;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-actions .button {
+  min-height: 43px;
+  padding: 11px 20px;
+}
+.saved-button {
+  display: flex;
+  gap: 7px;
+  background: transparent;
+  align-items: center;
+  font-size: 16px;
+}
+.property-hero {
+  padding: 20px 5% 0;
+}
+.property-hero-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 15px 0 35px;
+  gap: 35px;
+}
+.property-hero-copy .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}
+h1,
+h2 {
+  font-family: "Playfair Display Variable", serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+h1 {
+  font-size: clamp(48px, 5.2vw, 78px);
+  margin: 20px 0 0;
+}
+h1 em,
+h2 em {
+  font-weight: 400;
+  color: #73806a;
+}
+.property-hero-copy > p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 220px;
+  margin: 0 0 7px;
+}
+.property-hero-image {
+  height: 490px;
+  position: relative;
+  overflow: hidden;
+}
+.property-hero-image:after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, #13211870);
+  pointer-events: none;
+}
+.property-hero-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 53%;
+  animation: estate-reveal 1.5s both;
+}
+.hero-property-label {
+  position: absolute;
+  bottom: 27px;
+  left: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  z-index: 1;
+}
+.hero-property-label > span:first-child {
+  font-family: "Playfair Display Variable", serif;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hero-property-label small {
+  font-family: "DM Sans Variable", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+}
+.round-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #fff9;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+}
+.hero-property-label:hover .round-icon {
+  background: #ffffff30;
+}
+.photo-coordinate {
+  position: absolute;
+  bottom: 33px;
+  right: 30px;
+  color: #fff;
+  z-index: 1;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+.property-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  padding: 26px 28px;
+  background: #e9eddd;
+  gap: 25px;
+  align-items: center;
+  box-shadow: 0 15px 35px #23362b05;
+}
+.property-search label {
+  border-right: 1px solid #243d3133;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 20px;
+}
+.property-search label > span {
+  font-size: 16px;
+  letter-spacing: 0.14em;
+}
+.property-search select {
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  color: inherit;
+  padding: 4px 0;
+  width: 100%;
+  cursor: pointer;
+}
+.property-search .button {
+  font-size: 16px;
+  min-height: 48px;
+}
+.homes-section {
+  padding: 100px 5%;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+}
+.section-heading h2 {
+  font-size: clamp(36px, 4vw, 58px);
+  margin: 22px 0 30px;
+}
+.section-heading > p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  opacity: 1;
+}
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #243d3133;
+  padding: 20px 0;
+  font-size: 16px;
+}
+.saved-filter {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  opacity: 1;
+}
+.saved-filter.active {
+  opacity: 1;
+  font-weight: 600;
+}
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.listing-image {
+  aspect-ratio: 1/0.96;
+  position: relative;
+  overflow: hidden;
+}
+.image-open {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: #dfdfd4;
+  overflow: hidden;
+  display: block;
+}
+.image-open img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s;
+}
+.image-open:hover img {
+  transform: scale(1.06);
+}
+.listing-tag {
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  font-size: 13px;
+  letter-spacing: 0.09em;
+  background: var(--paper);
+  padding: 8px 10px;
+  pointer-events: none;
+}
+.save-home {
+  position: absolute;
+  right: 14px;
+  top: 13px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+}
+.save-home.is-saved {
+  background: #d8e2a9;
+}
+.listing-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  margin: 20px 0 12px;
+  opacity: 1;
+}
+.listing-location > span {
+  margin-left: auto;
+}
+.listing-name {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  gap: 12px;
+}
+.listing-name h3 {
+  font-family: "Playfair Display Variable", serif;
+  font-weight: 400;
+  font-size: 25px;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+.listing-specs {
+  display: flex;
+  gap: 18px;
+  margin: 18px 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.listing-specs span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.listing-price {
+  border-top: 1px solid #243d3130;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+.listing-price button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  font-size: 16px;
+}
+.empty-homes {
+  text-align: center;
+  padding: 60px 20px;
+  background: #e9eddd;
+}
+.empty-homes h3 {
+  font-family: "Playfair Display Variable", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.empty-homes p {
+  font-size: 16px;
+}
+.living-section {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: #e9e8dc;
+}
+.living-image {
+  position: relative;
+  min-height: 690px;
+}
+.living-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40%;
+}
+.living-image > span {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  color: white;
+  text-shadow: 0 1px 6px #000;
+}
+.living-copy {
+  padding: 80px 15%;
+  align-self: center;
+}
+.living-copy .eyebrow {
+  font-size: 13px;
+}
+.living-copy h2 {
+  font-size: clamp(45px, 5vw, 76px);
+  margin: 28px 0;
+}
+.living-copy p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.9;
+  opacity: 0.8;
+}
+.living-copy button {
+  background: transparent;
+  margin-top: 18px;
+  font-size: 16px;
+}
+.approach-section {
+  padding: 110px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 13%;
+}
+.approach-section h2 {
+  font-size: clamp(38px, 4vw, 56px);
+  margin: 25px 0;
+}
+.approach-section > div > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 390px;
+  opacity: 1;
+}
+.approach-section .text-link {
+  background: transparent;
+  margin-top: 12px;
+  font-size: 16px;
+}
+.approach-list {
+  padding-top: 20px;
+}
+.approach-list article {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-top: 1px solid #243d3133;
+  padding: 27px 0;
+}
+.approach-list article > span {
+  font-size: 16px;
+  padding-top: 5px;
+  opacity: 1;
+}
+.approach-list article > div {
+  flex: 1;
+}
+.approach-list h3 {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.approach-list p {
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 300px;
+  opacity: 1;
+  margin: 0;
+}
+.approach-list svg {
+  margin-top: 3px;
+}
+.aven-cta {
+  background: #d8e2a9;
+  text-align: center;
+  padding: 75px 5% 85px;
+}
+.aven-cta > .eyebrow {
+  font-size: 13px;
+}
+.aven-cta h2 {
+  font-size: clamp(52px, 6vw, 88px);
+  margin: 24px 0 35px;
+}
+.aven-cta em {
+  color: inherit;
+}
+.aven-footer {
+  background: #243d31;
+  color: #f7f5ee;
+  padding: 65px 5% 28px;
+}
+.aven-footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+.aven-footer-top > .aven-logo {
+  font-size: 70px;
+}
+.aven-footer-top > div > p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+.aven-footer-top > div > span {
+  font-size: 16px;
+  opacity: 1;
+}
+.aven-footer-bottom {
+  border-top: 1px solid #ffffff30;
+  margin-top: 55px;
+  padding-top: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  opacity: 1;
+}
+.aven-footer-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.detail-photo {
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.6s,
+    object-position 0.6s;
+}
+.crop-1 img {
+  transform: scale(1.5);
+  object-position: 15% center;
+}
+.crop-2 img {
+  transform: scale(1.7);
+  object-position: 90% 70%;
+}
+.detail-photo > span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: #243d31b0;
+  padding: 8px 12px;
+  font-size: 16px;
+  max-width: 60%;
+}
+.gallery-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--paper);
+  font-size: 16px;
+}
+.gallery-controls button {
+  background: transparent;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+.detail-body {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  padding-top: 30px;
+}
+.detail-body > div > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.detail-body ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  font-size: 16px;
+}
+.detail-body li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.detail-body aside {
+  border-left: 1px solid #243d3133;
+  padding-left: 30px;
+}
+.detail-body aside strong {
+  font-size: 26px;
+  font-weight: 500;
+}
+.detail-body aside p {
+  line-height: 1.8;
+  font-size: 16px;
+  opacity: 0.8;
+  margin-top: 18px;
+}
+.detail-body aside .text-link {
+  background: transparent;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.modal h2 {
+  font-family: "Playfair Display Variable", serif;
+}
+.modal .button {
+  font-size: 16px;
+}
+@keyframes estate-reveal {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (max-width: 1000px) {
+  .property-search {
+    gap: 16px;
+    padding: 23px 20px;
+  }
+  .property-search .button {
+    gap: 12px;
+    padding: 15px;
+  }
+  .property-grid {
+    gap: 18px;
+  }
+  .listing-specs {
+    gap: 12px;
+  }
+  .listing-price {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .listing-name h3 {
+    font-size: 21px;
+  }
+  .living-copy {
+    padding: 65px 12%;
+  }
+  .living-image {
+    min-height: 600px;
+  }
+}
+@media (max-width: 700px) {
+  .aven-nav {
+    height: 84px;
+    padding: 0 6%;
+  }
+  .aven-logo {
+    font-size: 37px;
+  }
+  .nav-actions {
+    gap: 17px;
+  }
+  .mobile-menu {
+    top: 84px;
+  }
+  .property-hero {
+    padding: 15px 6% 0;
+  }
+  .property-hero-copy {
+    display: block;
+    padding-bottom: 27px;
+  }
+  .property-hero-copy .eyebrow {
+    font-size: 13px;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 42px;
+    line-height: 1.17;
+    margin-top: 19px;
+  }
+  .property-hero-copy > p {
+    font-size: 16px;
+    margin-top: 20px;
+    max-width: none;
+  }
+  .property-hero-copy > p br {
+    display: none;
+  }
+  .property-hero-image {
+    height: 380px;
+    margin: 0 -6.8%;
+  }
+  .property-hero-image > img {
+    object-position: 45%;
+  }
+  .hero-property-label {
+    left: 23px;
+    bottom: 22px;
+    right: 23px;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .hero-property-label > span:first-child {
+    font-size: 21px;
+  }
+  .photo-coordinate {
+    display: none;
+  }
+  .property-search {
+    grid-template-columns: 1fr 1fr;
+    padding: 22px 17px;
+    gap: 20px 16px;
+    margin: 0 -6.8%;
+  }
+  .property-search label {
+    padding-right: 10px;
+  }
+  .property-search label:nth-child(2) {
+    border: 0;
+  }
+  .property-search label > span {
+    font-size: 16px;
+  }
+  .property-search select {
+    font-size: 16px;
+  }
+  .property-search .button {
+    font-size: 16px;
+  }
+  .homes-section {
+    padding: 65px 6%;
+  }
+  .section-heading {
+    display: block;
+  }
+  .section-heading h2 {
+    font-size: 39px;
+    margin: 23px 0;
+  }
+  .section-heading > p {
+    font-size: 16px;
+  }
+  .property-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .listing-image {
+    aspect-ratio: 1/1.05;
+  }
+  .listing-name h3 {
+    font-size: 28px;
+  }
+  .listing-price {
+    flex-wrap: nowrap;
+  }
+  .listing-location {
+    font-size: 16px;
+  }
+  .listing-specs {
+    font-size: 16px;
+    gap: 22px;
+  }
+  .listing-price button {
+    font-size: 16px;
+  }
+  .results-bar {
+    font-size: 16px;
+  }
+  .saved-filter {
+    font-size: 16px;
+  }
+  .living-section {
+    grid-template-columns: 1fr;
+  }
+  .living-image {
+    min-height: 440px;
+  }
+  .living-copy {
+    padding: 50px 7%;
+  }
+  .living-copy h2 {
+    font-size: 56px;
+  }
+  .living-copy h2 br:nth-child(2) {
+    display: none;
+  }
+  .approach-section {
+    grid-template-columns: 1fr;
+    padding: 65px 6%;
+    gap: 30px;
+  }
+  .approach-section h2 {
+    font-size: 42px;
+  }
+  .aven-cta {
+    padding: 65px 6%;
+  }
+  .aven-cta h2 {
+    font-size: 55px;
+  }
+  .aven-cta .eyebrow {
+    font-size: 13px;
+  }
+  .aven-cta .button {
+    font-size: 16px;
+  }
+  .aven-footer {
+    padding: 50px 6% 45px;
+  }
+  .aven-footer-top {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .aven-footer-top > .aven-logo {
+    font-size: 55px;
+  }
+  .aven-footer-top > div > p {
+    font-size: 16px;
+  }
+  .aven-footer-top > form {
+    width: 100%;
+    max-width: none;
+    margin-top: 10px;
+  }
+  .aven-footer-bottom {
+    font-size: 16px;
+    margin-top: 35px;
+  }
+  .aven-footer-bottom > a {
+    display: none;
+  }
+  .detail-photo {
+    height: 280px;
+  }
+  .detail-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .detail-body aside {
+    border-left: 0;
+    border-top: 1px solid #243d3133;
+    padding: 24px 0 0;
+  }
+  .detail-photo > span {
+    bottom: 65px;
+    left: 10px;
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .gallery-controls {
+    right: 10px;
+    bottom: 10px;
+  }
+  .modal h2 {
+    font-size: 32px;
+  }
+}
